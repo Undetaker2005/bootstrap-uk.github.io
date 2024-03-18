@@ -1,0 +1,137 @@
+/* Стилі для всіх тем */
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #212529;
+    background-color: #f8f9fa;
+    transition: background-color 0.3s;
+}
+.navbar-brand,
+.theme-switch-wrapper {
+    display: flex;
+    /* Використовуємо flexbox для розташування елементів в одному рядку */
+    align-items: center;
+    /* Вирівнюємо елементи по вертикалі */
+}
+
+.container {
+    flex: 1;
+    padding: 20px;
+}
+
+.card-img-top {
+    max-height: 200px;
+    object-fit: cover;
+}
+
+
+.footer {
+    background-color: #343a40;
+    padding: 20px 0;
+}
+
+@media (max-width: 768px) {
+    .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .col-md-4:nth-child(3), .col-md-4:nth-child(2) {
+        margin-top: 2%;
+    }
+
+    .list-unstyled {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .list-unstyled li {
+        margin-right: 15px;
+    }
+    
+}
+
+.donate-form form {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.donate-form input[type="image"] {
+    width: 200px;
+    height: auto;
+}
+
+.carousel-item img {
+    height: 400px;
+    margin-bottom: 2%;
+    object-fit: cover;
+}
+
+/*Перемикач*/
+
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-right: 2%;
+    margin-left: auto;
+}
+
+.theme-switch-wrapper input[type="checkbox"] {
+    display: none;
+}
+
+.theme-switch {
+    position: relative;
+    width: 60px;
+    height: 35px;
+    border-radius: 17px;
+    background-color: #fff;
+    transition: background-color 0.3s;
+}
+
+.theme-switch::before {
+    content: '🌞';
+    position: absolute;
+    top: 40%;
+    left: 8px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.theme-switch::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: left 0.3s, background-color 0.3s;
+}
+
+.dark-theme .theme-switch {
+    background-color: #000;
+}
+
+.dark-theme .theme-switch::before {
+    content: '🌙';
+    left: calc(100% - 35px);
+    color: #fff;
+}
+
+/* Стилі до темної теми */
+body.dark-theme {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #212529;
+    transition: background-color 0.3s;
+}
